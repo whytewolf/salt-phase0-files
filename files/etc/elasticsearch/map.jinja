@@ -1,4 +1,4 @@
-{% import_yaml "defaults.yaml" as elastic_config_defaults %}
+{% import_yaml "files/etc/elasticsearch/defaults.yaml" as elastic_config_defaults %}
 {% set elastic_pillar_config = salt.pillar.get('elasticsearch') %}
 {% set default_merge = {} %}
 {% do default_merge.update({'node.name': opt.id}) %}
