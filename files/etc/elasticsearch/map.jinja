@@ -1,7 +1,7 @@
 {% import_yaml "files/etc/elasticsearch/defaults.yaml" as elastic_config_defaults %}
 {% set elastic_pillar_config = salt.pillar.get('elasticsearch') %}
 {% set default_merge = {} %}
-{% do default_merge.update({'node.name': opt.id}) %}
+{% do default_merge.update({'node.name': opts.id}) %}
 {% if elastic_pillar_config.get('network_subnet',False) != False %}
   {% do default_merge.update({'network.host': salt.network.ip_addr(elastic_pillar_config.get('network_subnet','0.0.0.0'))|last})%}
 {%else%}
