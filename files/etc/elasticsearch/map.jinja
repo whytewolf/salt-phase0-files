@@ -5,10 +5,10 @@
 {% if elastic_pillar_config.get('network_subnet',False) != False %}
   {% do default_merge.update({'network.host': salt.network.ip_addr(elastic_pillar_config.get('network_subnet','0.0.0.0'))|last})%}
 {%else%}
-  {% do default_merge.update({'network.host': '0.0.0.0'} %}
+  {% do default_merge.update({'network.host': '0.0.0.0'}) %}
 {%endif%}
 {% set masters = salt.mine.get('roles:elastic_master','hostname',tgt='pillar') %}
-{% do default_merge.update({'discovery.zen.ping.unicast.hosts': masters} %}
+{% do default_merge.update({'discovery.zen.ping.unicast.hosts': masters}) %}
 
 {% set elastic_config_defaults = {'default': salt.grains.filter_by(elastic_config_defaults,merge=default_merge)} %}
 {% set elastic_config = salt.grains.filter_by(elastic_config_defaults,merge=salt.pillar.get('elasticsearch:config_opts')) %}
