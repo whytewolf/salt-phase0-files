@@ -1,4 +1,4 @@
-{% set tenants = salt.keystone.projects() %}
+{% set tenants = salt.keystone.project_list() %}
 {{tenants}}
 {% set images = salt.nova.image_list() %}
 {{images}}
