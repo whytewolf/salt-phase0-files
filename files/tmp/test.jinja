@@ -1,0 +1,6 @@
+{% set tenants = salt.keystone.projects() %}
+{{tenants}}
+{% set images = salt.nova.image_list() %}
+{{images}}
+{% set sizes = salt.nova.flavor_list() %}
+{{sizes}}
