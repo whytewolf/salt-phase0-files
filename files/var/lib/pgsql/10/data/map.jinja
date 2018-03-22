@@ -1,4 +1,4 @@
-{% import_yaml 'defaults.yml' as defaults %}
+{% import_yaml 'files/var/lib/pgsql/10/data/defaults.yml' as defaults %}
 {% set settings = salt.pillar.get('pgsql',{}) %}
 {% set hbas = defaults.hbas %}
 {% set configs = defaults.configs %}
