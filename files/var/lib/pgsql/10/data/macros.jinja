@@ -12,6 +12,6 @@
 {{hba['mapname']}} {{hba['sys_user']}} {{hba['pg_user']}}
 {% endmacro %}
 
-{% macro conf_line(key,value) %}
-{{key}} = {{value}}
+{% macro conf_line(key,value) -%}
+{{key}} = {{value|yaml}}
 {%endmacro%}
