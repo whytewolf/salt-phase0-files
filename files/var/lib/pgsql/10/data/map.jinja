@@ -6,7 +6,7 @@
 {% if salt.pillar.get('pgsql:slsconf:overwrite_hbas', False) %}
   {% set hbas = settings.hbas %}
 {% else %}
-  {% set hbas.append(settings.hbas) %}
+  {% do hbas.append(settings.hbas) %}
 {% endif %}
 {% if salt.pillar.get('pgsql:slsconf:overwrite_conf', False) %}
   {% set configs = settings.configs %}
