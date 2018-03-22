@@ -1,0 +1,15 @@
+{% import_yaml 'defaults.yml' as defaults %}
+{% set settings = salt.pillar.get('pgsql',{}) %}
+{% set hbas = defaults.hbas %}
+{% set configs = defaults.configs %}
+{% set idents = settings.get('idents',[]) %}
+{% if salt.pillar.get('pgsql:slsconf:overwrite_hbas', False) %}
+  {% set hbas = settings.hbas %}
+{% else %}
+  {% set hbas.append(settings.hbas) %}
+{% endif %}
+{% if salt.pillar.get('pgsql:slsconf:overwrite_conf', False) %}
+  {% set configs = settings.configs %}
+{% else %}
+  {% do salt.defaults.merge(configs,settings.configs) %}
+{% endif %}
