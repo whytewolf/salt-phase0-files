@@ -12,8 +12,6 @@
 {{hba['mapname']}} {{hba['sys_user']}} {{hba['pg_user']}}
 {% endmacro %}
 
-{% macro conf_line(config) %}
-{{config}}
-{#{% set key,value = config %}#}
-{#{{key}} = {{value}}#}
+{% macro conf_line(key,value) %}
+{{key}} = {{value}}
 {%endmacro%}
