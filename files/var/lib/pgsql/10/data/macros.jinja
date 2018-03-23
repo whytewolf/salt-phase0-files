@@ -1,6 +1,6 @@
 {% macro hba_line(hba) -%}
 
-{{hba.type}} {{hba.database}} {{hba.user}} {{hba.address}} {{hba.method}}
+{{hba.type}}	{{hba.database}}	{{hba.user}}	{{hba.address}}	{{hba.method}}
 
 {{hba}}
 {% endmacro %}
@@ -12,7 +12,7 @@
 
 
 {% macro ident_line(ident) -%}
-{{hba['mapname']}} {{hba['sys_user']}} {{hba['pg_user']}}
+{{hba.mapname}}	{{hba.sys_user}}	{{hba.pg_user}}
 {% endmacro %}
 
 {% macro conf_line(key,value) -%}
