@@ -13,5 +13,5 @@
 {% endmacro %}
 
 {% macro conf_line(key,value) -%}
-{{key}} = {{value|yaml}}
+{{{key: value}|xmlattr}}
 {%endmacro%}
