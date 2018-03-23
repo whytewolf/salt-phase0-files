@@ -1,8 +1,5 @@
 {% macro hba_line(hba) -%}
-
 {{hba.type}}	{{hba.database}}	{{hba.user}}	{{hba.address}}	{{hba.method}}
-
-{{hba}}
 {% endmacro %}
 
 {% macro salt_warning() -%}
