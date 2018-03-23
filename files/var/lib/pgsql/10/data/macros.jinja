@@ -9,7 +9,7 @@
 
 
 {% macro ident_line(ident) -%}
-{{hba.mapname}}	{{hba.sys_user}}	{{hba.pg_user}}
+{{ident.mapname}}	{{ident.sys_user}}	{{ident.pg_user}}
 {% endmacro %}
 
 {% macro conf_line(key,value) -%}
