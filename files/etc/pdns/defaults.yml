@@ -1,0 +1,6 @@
+configs:
+  daemon: 'no'
+  guardian: 'no'
+  launch: ''
+  setgid: pdns
+  setuid: pdns

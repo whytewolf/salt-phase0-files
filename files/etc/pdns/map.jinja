@@ -1,0 +1,7 @@
+{% import_yaml 'files/etc/pdns/defaults.yml' as defaults %}
+{% set configs = defaults.configs %}
+{% if salt.pillar.get('pdns:slsconf:overwrite_conf', False) %}
+  {% set configs = salt.pillar.get('pdns:configs',{}) %}
+{% else %}
+  {% do salt.defaults.merge(configs,salt.pillar.get('pdns:configs',{})) %}
+{% endif %}
