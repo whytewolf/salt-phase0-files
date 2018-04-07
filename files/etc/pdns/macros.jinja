@@ -3,5 +3,5 @@
 # It will be overwritten by Salt.
 {% endmacro %}
 {% macro conf_line(key,value) -%}
-{{key}}='{{ value}}'
+{{key}}={{ value}}
 {%endmacro%}
