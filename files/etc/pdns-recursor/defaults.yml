@@ -1,0 +1,3 @@
+configs:
+  setgid: pdns-recursor
+  setuid: pdns-recursor
